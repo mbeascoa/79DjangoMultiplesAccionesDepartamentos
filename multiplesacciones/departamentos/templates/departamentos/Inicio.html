@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form method="post" action="multiples">
+            {% csrf_token %}
+
+            <div>
+                Número :
+                <input type="text" name="numero"/>
+            </div>
+            <div>
+                Nombre:
+                <input type="text" name="nombre"/>
+            </div>
+            <div>
+                Localidad:
+                <input type="text" name="localidad"/>
+            </div>
+            <div>
+                <button type="submit" name="operacion"
+                    value="insertar">
+                            insertado departamento
+                </button>
+                <button type="submit" name="operacion"
+                    value="modificar">
+                            modificado departamento
+                </button>
+                 <button type="submit" name="operacion"
+                    value="eliminar">
+                            eliminado departamento
+                 </button>
+            </div>
+
+        </form>
+        {% if resultado %}
+
+            <h2 style='color:red'>Se ha realizado la acción {{operacion}} y se ha  {{resultado}} </H2>
+
+         {% endif %}
+
+</body>
+</html>
